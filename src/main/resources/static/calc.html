@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>clac</title>
+</head>
+<body>
+<form action="calc" method="get">
+    <input id="su1" type="text" name="su1">
+<!--    <input type="text" name="user" value="요청자">-->
+    <select name="op">
+        <option>+</option>
+        <option>-</option>
+        <option>*</option>
+        <option>/</option>
+        <option>%</option>
+    </select>
+    <input id="su2" type="text" name="su2">
+    <div id="here"></div>
+    <input id="but" type="button" name="but" value="button">
+
+<!--    a 링크에 url에 직접 파라미터 주기-->
+    <h3><a href="calc?su1=10&op=*&su2=10"> a링크로 서블릿 이동 </a> </h3>
+
+    <script>
+document.querySelector("form").addEventListener("submit",
+function(e){
+if( isNaN(document.querySelector("#su1").value) || isNaN(document.querySelector("#su2").value)){
+
+document.querySelector("#here").innerHTML = "숫자가 아닙니다";
+e.preventDefault();
+
+}
+}
+,false);
+
+
+//버튼에 submit 기능 만들기
+document.querySelector("#but").addEventListener("click",
+function(){
+//직접 url 주게 속성 바꿀 수 있고
+//document.querySelector("form")setAttribute("action", "url");
+//document.querySelector("form")setAttribute("method", "get");
+// 가져와서 그대로 submit 기능을 시키는 것
+document.querySelector("form").submit();
+
+}
+,false);
+
+
+
+
+</script>
+    <input type="submit" value="submit">
+</form>
+
+
+
+</body>
+</html>

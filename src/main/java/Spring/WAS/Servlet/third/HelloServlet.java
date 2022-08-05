@@ -1,4 +1,4 @@
-package Spring.WAS.Servlet;
+package Spring.WAS.Servlet.third;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

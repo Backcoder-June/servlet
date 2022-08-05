@@ -2,6 +2,7 @@ package Spring.WAS.Servlet.register;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Enumeration;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -41,6 +42,15 @@ public class registerServlet extends HttpServlet {
             out.println( subject[i] + " ");
         }
         out.println(" 과정을 선택하셨습니다 </h1>"); //입력하신 id는 xxxx 입니다
+
+
+        // name 값을 모르겠을때 태그에 입력값들 name 을 가져오는 것
+        /*Enumeration<String> names = request.getParameterNames();
+        while (names.hasMoreElements()) {
+            out.println(names.nextElement() + "<br>");
+        }
+*/
+
     }
 
 }

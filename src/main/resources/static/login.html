@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+<script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+<form action="login">
+    아이디입력 : <input type="text" name="id" id="id">
+    암호입력 : <input type="password" name="pw" id="pw">
+
+    <input type="hidden" id="role" name="role">
+
+    <input type="submit" value="로그인">
+</form>
+
+<script>
+$(document).ready(function(){
+
+$("form").on("submit", function(){
+if( $("#id").val() == 'adm' || $("#id").val() == 'admin' ){
+$("#role").val('admin');
+}else{
+$("#role").val('user');
+}
+
+// attr set 할때는 html 식 문법이 훨씬편하다.
+//this.action = "login";
+
+
+});
+
+
+
+
+//
+});
+</script>
+
+</body>
+</html>
